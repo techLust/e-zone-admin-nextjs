@@ -1,9 +1,11 @@
+import "./globals.css"
+import Nav from './_components/nav'
 
 export default function Home() {
   return (
     <main>
       <div>
-        <h2>FUCK YOU NEXT</h2>
+        <Nav />
       </div>
     </main>
   )
