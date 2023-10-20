@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
+import axios from 'axios'
 
 const page = () => {
 
@@ -16,9 +17,14 @@ const page = () => {
 
     const handleInput = e => setSignUpInput(prev => ({ ...prev, [e.target.name]: e.target.value }))
     
-
-    const signUP = () => {
-        console.log(singUpInput)
+    const handleSignUP = async (data) => {
+        try{
+            console.log(singUpInput)
+            const userData = await axios.post('/api/signup/', data);
+            console.log("USER DATA", userData)
+        }catch(e){
+            cosole.log(e)
+        }
     }
 
     return (
@@ -103,7 +109,7 @@ const page = () => {
                         <div className="relative z-0 w-full mb-6 group">
                             <input
                                 type="tel"
-                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 name="phone"
                                 value={singUpInput.phone}
                                 onChange={handleInput}
@@ -143,8 +149,8 @@ const page = () => {
                     </fieldset>
                     <div className='flex justify-center'>
                         <button
-                            type="submit"
-                            onClick={signUP}
+                            type="button"
+                            onClick={() => handleSignUP(singUpInput)}
                             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             Sign Up
                         </button>

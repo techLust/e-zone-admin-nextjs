@@ -26,4 +26,4 @@ const SignUpSchema = new mongoose.Schema({
     timestamps: true,
 })
 
-export const SignUpModel = mongoose.model(SignUpSchema, admin);
+export const SignUpModel = mongoose.models.admin || mongoose.model('admin', SignUpSchema);
