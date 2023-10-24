@@ -1,12 +1,15 @@
 import mongoose from "mongoose";
-
-const MONGODB_URI = 'mongodb://localhost:27017/zoneadmin'
+import { config } from "dotenv";
+config();
 
 const connectDB = async () => {
     try{
-        await mongoose.connect(MONGODB_URI, {
+        await mongoose.connect(process.env.MONGODB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
+            user: process.env.MONGODB_USERNAME,
+            pass: process.env.MONGODB_PASSWORD,
+            authSource: 'admin'
         })
         console.log('Database connected')
     }catch(e){

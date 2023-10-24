@@ -6,7 +6,7 @@ const nav = () => {
         <nav>
             <div className="bg-white dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Next_exp</span>
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">eZone</span>
 
                     <div className="flex md:order-2">
                         <Link href='/signin'>
