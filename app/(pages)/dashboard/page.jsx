@@ -12,9 +12,9 @@ const pages = () => {
     console.log(allLength);
     setUsers(allLength);
   };
-  console.log("USERS", users);
+  // console.log("USERS", users);
   useEffect(() => {
-    userLength();
+    // userLength();
   }, []);
 
   return (
